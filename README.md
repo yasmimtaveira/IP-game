@@ -1,11 +1,11 @@
 # THRILLER Game - Projeto de Introdução a Programação
 
 ## Equipe:
-○	Ayllane Maria Silva de Santana
-○	Júlia Almeida Brainer Dantas
-○	Larissa Paiva dos Santos
-○	Livia dos Santos Ferreira
-○	Yasmim Taveira Lopes
+* Ayllane Maria Silva de Santana
+* Júlia Almeida Brainer Dantas
+* Larissa Paiva dos Santos
+* Livia dos Santos Ferreira
+* Yasmim Taveira Lopes
 
 ## Descrição
 A descrição da arquitetura do projeto, explicando como o código foi organizado;
@@ -18,9 +18,9 @@ As ferramentas, bibliotecas, frameworks utilizados com as respectivas justificat
 
 ## Divisão de tarefas
 A divisão de trabalho dentro do grupo (quem fez o quê);
-código base - larissa
-relatório, slide... - yasmim
-sprites - Livia
+* código base - larissa
+* latório, slide... - yasmim
+* sprites - Livia
 
 ## Conceitos utilizados
 Os conceitos que foram apresentados durante a disciplina e utilizados no projeto (indicando onde foram usados);
