@@ -10,10 +10,10 @@ class Personagem(pygame.sprite.Sprite): #classe personagem herda da classe sprit
 
         #Atributos
         self.sprites = [] #lista que fica as imagens do michael
-        self.sprites.append(pygame.image.load('michael.png'))
-        self.sprites.append(pygame.image.load('m2.png'))
-        self.sprites.append(pygame.image.load('m3.png'))
-        self.sprites.append(pygame.image.load('m4.png'))
+        self.sprites.append(pygame.image.load('IP-game/teste_animacao/michael.png'))
+        self.sprites.append(pygame.image.load('IP-game/teste_animacao/m2.png'))
+        self.sprites.append(pygame.image.load('IP-game/teste_animacao/m3.png'))
+        self.sprites.append(pygame.image.load('IP-game/teste_animacao/m4.png'))
 
         self.atual = 0
         self.image = self.sprites[self.atual] #inicia a animação na primeira imagem
@@ -68,4 +68,3 @@ while True: #loop principal
     todas_sprites.update() # atualiza
 
     pygame.display.flip() #atualiza o jogo a cada interação
-
