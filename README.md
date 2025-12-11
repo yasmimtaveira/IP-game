@@ -27,7 +27,7 @@ As ferramentas, bibliotecas, frameworks utilizados com as respectivas justificat
 A divisão de trabalho dentro do grupo (quem fez o quê);
 * código base - larissa
 * latório, slide... - yasmim
-* sprites - Livia
+* tema, sprites, design - Livia, Ayllane, Júlia
 
 
 ## 📚 Conceitos utilizados
