@@ -1,4 +1,5 @@
 import pygame
+from constantes import *
 
 pygame.init()
 
@@ -8,10 +9,10 @@ class Personagem(pygame.sprite.Sprite): #classe personagem herda da classe sprit
 
         #Atributos
         self.sprites = [] #lista que fica as imagens do michael
-        self.sprites.append(pygame.image.load('sprites/michael.png'))
-        self.sprites.append(pygame.image.load('sprites/m2.png'))
-        self.sprites.append(pygame.image.load('sprites/m3.png'))
-        self.sprites.append(pygame.image.load('sprites/m4.png'))
+        self.sprites.append(pygame.image.load(os.path.join(diretorio_imagens, 'michael.png')).convert_alpha())
+        self.sprites.append(pygame.image.load(os.path.join(diretorio_imagens, 'm2.png')).convert_alpha())
+        self.sprites.append(pygame.image.load(os.path.join(diretorio_imagens, 'm3.png')).convert_alpha())
+        self.sprites.append(pygame.image.load(os.path.join(diretorio_imagens, 'm4.png')).convert_alpha())
 
         self.x = 0 #coordenadas iniciais de michael
         self.y = 0
