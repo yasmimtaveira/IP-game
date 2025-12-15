@@ -1,0 +1,12 @@
+largura = 800
+altura = 480
+
+#TUPLAS RGB DE CORES
+preto = (0, 0, 0)
+branco = (255, 255, 255)
+vermelho = (255, 0, 0)
+verde = (0, 255, 0)
+azul = (0, 0, 255)
+amarelo = (255, 255, 0)
+ciano = (0, 255, 255)
+magenta = (255, 0, 255)
