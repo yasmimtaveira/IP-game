@@ -11,7 +11,7 @@ tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption('THRILLER')
 relogio = pygame.time.Clock()
 
-fundo = pygame.image.load('IP-game/sprites/chao_cemiterio.jpg').convert() #carrega a imagem
+fundo = pygame.image.load('sprites/chao_cemiterio.jpg').convert() #carrega a imagem
 fundo = pygame.transform.scale(fundo,(largura, altura)) #muda as dimenções
 
 todas_sprites = pygame.sprite.Group() #classe com todas as sprites
