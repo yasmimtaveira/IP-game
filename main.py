@@ -4,7 +4,7 @@ from pygame.locals import *
 from sys import exit
 from personagem import Personagem #importa a classe do outro arquivo
 from sapato import Sapato
-from microfone import Microfone
+from microfone2 import Microfone
 from constantes import *
 from random import randrange
 

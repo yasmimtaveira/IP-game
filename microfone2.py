@@ -1,7 +1,6 @@
 from constantes import *
-import pygame
+import pygame, os
 from random import randrange
-import os
 
 class Microfone(pygame.sprite.Sprite):
     def __init__(self):
@@ -12,14 +11,14 @@ class Microfone(pygame.sprite.Sprite):
         self.image = pygame.image.load(os.path.join(diretorio_imagens, 'microfone.png')).convert_alpha()
 
         #redimensionar a sprite
-        # self.image = pygame.transform.scale(self.image, (40, 40))
+        self.image = pygame.transform.scale(self.image, (80, 80))
 
         #cria o rect
         self.rect = self.image.get_rect()
 
         # posição inicial aleatória na tela
-        self.rect.y = randrange(40, altura - 100, 40)
-        self.rect.x = randrange(40, largura - 100, 40)
+        self.rect.y = randrange(40, 440, 50)
+        self.rect.x = randrange(50, 750, 50)
 
         #máscara para colisão pixel-perfect (mais precisa que rect)
         self.mask = pygame.mask.from_surface(self.image)
