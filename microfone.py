@@ -1,27 +1,25 @@
+from constantes import *
+import pygame
+from random import randrange
 import os
-from random import randint
 
+class Microfone(pygame.sprite.Sprite):
+    def __init__(self):
+        #inicializa  a classe Sprite com init
+        pygame.sprite.Sprite.__init__(self)
 
-class Microfone:
-    def __init__(self, imagem, cor_tipo):
-        # imagem: Surface do microfone
-        # cor_tipo: string apenas para identificar (azul, laranja, roxo)
-        self.imagem = imagem
-        self.tipo = cor_tipo
-        self.rect = self.imagem.get_rect()
-        self.reposicionar()
+        #carrega a imagem do microfone
+        self.image = pygame.image.load(os.path.join(diretorio_imagens, 'microfone.png')).convert_alpha()
 
-    def reposicionar(self):
-        self.rect.topleft = (
-            randint(40, 600),
-            randint(50, 430)
-        )
+        #redimensionar a sprite
+        # self.image = pygame.transform.scale(self.image, (40, 40))
 
-    def desenhar(self, tela):
-        tela.blit(self.imagem, self.rect)
+        #cria o rect
+        self.rect = self.image.get_rect()
 
-    def verificar_colisao(self, jogador_rect):
-        if self.rect.colliderect(jogador_rect):
-            self.reposicionar()
-            return True
-        return False
+        # posição inicial aleatória na tela
+        self.rect.y = randrange(40, altura - 100, 40)
+        self.rect.x = randrange(40, largura - 100, 40)
+
+        #máscara para colisão pixel-perfect (mais precisa que rect)
+        self.mask = pygame.mask.from_surface(self.image)
