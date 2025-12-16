@@ -7,6 +7,7 @@ from sapato import Sapato
 from microfone2 import Microfone
 from relogio import Relogio
 from constantes import *
+from tela_inicial import Tela_inicial
 from random import randrange
 
 pygame.init()
@@ -47,7 +48,7 @@ grupo_relogio.add(relogio)
 
 #cronômetro
 # O tempo inicial em segundos (60 segundos = 1 minuto de jogo)
-initial_time_seconds = 15
+initial_time_seconds = 5
 time_left_seconds = initial_time_seconds
 
 # Cria um evento de usuário personalizado que será acionado a cada segundo (1000ms)
@@ -56,9 +57,14 @@ pygame.time.set_timer(COUNTDOWN_EVENT, 1000) # Dispara o evento a cada 1000 mili
 
 # Variável do fim do jogo
 game_over = False
+inicio = True
 
 while True: #loop principal
     clock.tick(30) #fps da tela
+
+    if inicio:
+        Tela_inicial(tela, inicio)
+        inicio = False
 
     #exibição dos pontos 
     mensagem_sapato = f'Sapatos: {n_sapatos}'
@@ -80,6 +86,11 @@ while True: #loop principal
 
             if event.key == K_SPACE:
                 michael.dancar()
+
+            if event.key == K_RETURN and inicio == False:
+                inicio = True
+                game_over = False
+                time_left_seconds = initial_time_seconds
 
         if not game_over:
             # Verifica se o evento do cronômetro personalizado foi disparado

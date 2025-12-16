@@ -3,12 +3,11 @@ from constantes import *
 
 pygame.init()
 
-def tela_inicial(tela):
+def Tela_inicial(tela, inicio):
     # Carregar imagem de fundo inicial
     fundo = pygame.image.load(os.path.join(diretorio_imagens, 'Telainicial.jpg')).convert()
     fundo = pygame.transform.scale(fundo, (largura, altura))
 
-    inicio = True   # controle do loop
     while inicio:
         for event in pygame.event.get():
 
