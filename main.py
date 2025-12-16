@@ -2,7 +2,7 @@
 import pygame
 from pygame.locals import *
 from sys import exit
-from classes import Personagem #importa a classe do outro arquivo
+from personagem import Personagem #importa a classe do outro arquivo
 from constantes import *
 
 pygame.init()
