@@ -5,6 +5,7 @@ from sys import exit
 from personagem import Personagem #importa a classe do outro arquivo
 from sapato import Sapato
 from microfone2 import Microfone
+from relogio import Relogio
 from constantes import *
 from random import randrange
 
@@ -14,13 +15,14 @@ pygame.mixer.init()
 #definindo as variaveis dos pontos 
 n_sapatos = 0
 n_microfones = 0
+n_relogios = 0
 
 #fontes
 fonte = pygame.font.SysFont('freesansbold.ttf', 30, False, False) #negrito e italico 
 
 tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption('THRILLER')
-relogio = pygame.time.Clock()
+clock = pygame.time.Clock()
 
 fundo = pygame.image.load(os.path.join(diretorio_imagens, 'chao_cemiterio.jpg')).convert_alpha() #carrega a imagem
 fundo = pygame.transform.scale(fundo,(largura, altura)) #muda as dimenções
@@ -29,25 +31,32 @@ todas_sprites = pygame.sprite.Group() #classe com todas as sprites
 michael = Personagem()
 sapato = Sapato()
 microfone = Microfone()
+relogio = Relogio()
+
 todas_sprites.add(michael)
 todas_sprites.add(sapato)
 todas_sprites.add(microfone)
+todas_sprites.add(relogio)
 
 grupo_sapato = pygame.sprite.Group()
 grupo_sapato.add(sapato)
 grupo_microfone = pygame.sprite.Group()
 grupo_microfone.add(microfone)
+grupo_relogio = pygame.sprite.Group()
+grupo_relogio.add(relogio)
 
 while True: #loop principal
-    relogio.tick(30) #fps da tela
+    clock.tick(30) #fps da tela
 
     #exibição dos pontos 
     mensagem_sapato = f'Sapatos: {n_sapatos}'
     mensagem_microfone = f'Microfones: {n_microfones}'
+    mensagem_relogio = f'Relógios: {n_relogios}'
 
     #texto formatado -- colocando cor, textura e a mensagem juntos. 
     sapato_formatado = fonte.render(mensagem_sapato, True, branco)
     microfone_formatado = fonte.render(mensagem_microfone, True, branco)
+    relogio_formatado = fonte.render(mensagem_relogio, True, branco)
     
     for event in pygame.event.get():
 
@@ -77,6 +86,7 @@ while True: #loop principal
 
     colisoes = pygame.sprite.spritecollide(michael, grupo_sapato, False, pygame.sprite.collide_mask)
     colisao_micro = pygame.sprite.spritecollide(michael, grupo_microfone, False, pygame.sprite.collide_mask)
+    colisao_relogio = pygame.sprite.spritecollide(michael, grupo_relogio, False, pygame.sprite.collide_mask)
 
     if colisoes:
         sapato.rect.y = randrange(40, 440, 50)
@@ -88,12 +98,18 @@ while True: #loop principal
         microfone.rect.x = randrange(50, 750, 50)
         n_microfones += 1
 
+    if colisao_relogio:
+        relogio.rect.y = randrange(40, 440, 50)
+        relogio.rect.x = randrange(50, 750, 50)
+        n_relogios += 1
+
     todas_sprites.draw(tela) #sprite aparece na tela
     todas_sprites.update() # atualiza a imagem
 
     #tela.blit faz o texto formatdo aparecer na tela. 
     tela.blit(sapato_formatado, (10, 10))
     tela.blit(microfone_formatado, (200, 10))
+    tela.blit(relogio_formatado, (400, 10))
 
     pygame.display.flip() #atualiza o jogo a cada interação
 

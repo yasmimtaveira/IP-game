@@ -3,7 +3,7 @@ import pygame
 from random import randrange
 
 
-class Sapato(pygame.sprite.Sprite):
+class Relogio(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         
