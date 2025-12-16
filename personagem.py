@@ -23,6 +23,7 @@ class Personagem(pygame.sprite.Sprite): #classe personagem herda da classe sprit
 
         self.rect = self.image.get_rect()
         self.rect.topleft = self.x, self.y #posição do canto superior esquerdo da imagem
+        self.mask = pygame.mask.from_surface(self.image)
 
         self.animar = False
 
