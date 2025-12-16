@@ -45,6 +45,18 @@ grupo_microfone.add(microfone)
 grupo_relogio = pygame.sprite.Group()
 grupo_relogio.add(relogio)
 
+#cronômetro
+# O tempo inicial em segundos (60 segundos = 1 minuto de jogo)
+initial_time_seconds = 15
+time_left_seconds = initial_time_seconds
+
+# Cria um evento de usuário personalizado que será acionado a cada segundo (1000ms)
+COUNTDOWN_EVENT = pygame.USEREVENT + 1
+pygame.time.set_timer(COUNTDOWN_EVENT, 1000) # Dispara o evento a cada 1000 milissegundos
+
+# Variável do fim do jogo
+game_over = False
+
 while True: #loop principal
     clock.tick(30) #fps da tela
 
@@ -68,6 +80,14 @@ while True: #loop principal
 
             if event.key == K_SPACE:
                 michael.dancar()
+
+        if not game_over:
+            # Verifica se o evento do cronômetro personalizado foi disparado
+            if event.type == COUNTDOWN_EVENT:
+                time_left_seconds -= 1
+                if time_left_seconds <= 0:
+                    game_over = True
+                    time_left_seconds = 0 # Garante que o contador não mostre números negativos
 
     tela.blit(fundo, (0,0)) #adiciona a imagem de fundo na origem na tela
 
@@ -110,6 +130,22 @@ while True: #loop principal
     tela.blit(sapato_formatado, (10, 10))
     tela.blit(microfone_formatado, (200, 10))
     tela.blit(relogio_formatado, (400, 10))
+
+
+    if not game_over:
+        # Formata o tempo para MM:SS
+        minutes = time_left_seconds // 60
+        seconds = time_left_seconds % 60
+        timer_text = f"{minutes:02}:{seconds:02}"
+        
+        # Renderiza e exibe o cronômetro
+        text_surface = fonte.render(timer_text, True, branco)
+        tela.blit(text_surface, (700,10))
+
+    else: #ele perdeu pelo fim do tempo
+        game_over_formatado = fonte.render('GAME OVER', True, branco)
+        tela.fill(preto)
+        tela.blit(game_over_formatado, (largura/2 - 50, altura/2 - 30))
 
     pygame.display.flip() #atualiza o jogo a cada interação
 
