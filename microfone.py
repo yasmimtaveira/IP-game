@@ -10,6 +10,7 @@ class Microfone(pygame.sprite.Sprite):
 
         #carrega a imagem do microfone
         self.image = pygame.image.load(os.path.join(diretorio_imagens, 'microfone.png')).convert_alpha()
+        self.image = pygame.transform.scale(self.image, (80,80)) #muda o tamanho da imagem (pixels)
 
         #redimensionar a sprite
         # self.image = pygame.transform.scale(self.image, (40, 40))

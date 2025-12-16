@@ -4,6 +4,7 @@ from pygame.locals import *
 from sys import exit
 from personagem import Personagem #importa a classe do outro arquivo
 from sapato import Sapato
+from microfone import Microfone
 from constantes import *
 from random import randrange
 
@@ -12,6 +13,7 @@ pygame.mixer.init()
 
 #definindo as variaveis dos pontos 
 n_sapatos = 0
+n_microfones = 0
 
 #fontes
 fonte = pygame.font.SysFont('freesansbold.ttf', 30, False, False) #negrito e italico 
@@ -26,20 +28,26 @@ fundo = pygame.transform.scale(fundo,(largura, altura)) #muda as dimenções
 todas_sprites = pygame.sprite.Group() #classe com todas as sprites
 michael = Personagem()
 sapato = Sapato()
+microfone = Microfone()
 todas_sprites.add(michael)
 todas_sprites.add(sapato)
+todas_sprites.add(microfone)
 
-grupo_coletaveis = pygame.sprite.Group()
-grupo_coletaveis.add(sapato)
+grupo_sapato = pygame.sprite.Group()
+grupo_sapato.add(sapato)
+grupo_microfone = pygame.sprite.Group()
+grupo_microfone.add(microfone)
 
 while True: #loop principal
     relogio.tick(30) #fps da tela
 
     #exibição dos pontos 
-    mensagem_sapato = f'Sapatos coletados: {n_sapatos}'
+    mensagem_sapato = f'Sapatos: {n_sapatos}'
+    mensagem_microfone = f'Microfones: {n_microfones}'
 
     #texto formatado -- colocando cor, textura e a mensagem juntos. 
     sapato_formatado = fonte.render(mensagem_sapato, True, branco)
+    microfone_formatado = fonte.render(mensagem_microfone, True, branco)
     
     for event in pygame.event.get():
 
@@ -67,18 +75,25 @@ while True: #loop principal
     if pygame.key.get_pressed()[K_s] and (michael.rect.y + 7 < altura - 150):
         michael.rect.y += 7
 
-    colisoes = pygame.sprite.spritecollide(michael, grupo_coletaveis, False, pygame.sprite.collide_mask)
+    colisoes = pygame.sprite.spritecollide(michael, grupo_sapato, False, pygame.sprite.collide_mask)
+    colisao_micro = pygame.sprite.spritecollide(michael, grupo_microfone, False, pygame.sprite.collide_mask)
 
     if colisoes:
         sapato.rect.y = randrange(40, 440, 50)
         sapato.rect.x = randrange(50, 750, 50)
         n_sapatos += 1
 
+    if colisao_micro:
+        microfone.rect.y = randrange(40, 440, 50)
+        microfone.rect.x = randrange(50, 750, 50)
+        n_microfones += 1
+
     todas_sprites.draw(tela) #sprite aparece na tela
     todas_sprites.update() # atualiza a imagem
 
     #tela.blit faz o texto formatdo aparecer na tela. 
     tela.blit(sapato_formatado, (10, 10))
+    tela.blit(microfone_formatado, (200, 10))
 
     pygame.display.flip() #atualiza o jogo a cada interação
 
