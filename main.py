@@ -26,6 +26,9 @@ zumbi_hits = 0 #encontros com zumbi -- contador
 
 #fontes
 fonte = pygame.font.SysFont('Calibri', 35, True, False) #negrito e italico 
+fonte2 = pygame.font.SysFont('Calibri', 25, False, True) #negrito e italico 
+mensagem_danca = 'Pressione Espaço para fazer o Michael dançar!'
+danca_formatada = fonte2.render(mensagem_danca, True, verde)
 
 tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption('ESCAPE THRILLER')
@@ -42,18 +45,22 @@ relogio = Relogio()
 
 #ZUMBIS
 zumbi1 = Zumbi()
-zumbi1.rect.x = 100
+zumbi1.rect.x = 50
 zumbi1.rect.y = 60
 
 zumbi2 = Zumbi()
-zumbi2.rect.x = 500
-zumbi2.rect.y = 300
+zumbi2.rect.x = 300
+zumbi2.rect.y = 200
+
+zumbi3 = Zumbi()
+zumbi3.rect.x = 600
+zumbi3.rect.y = 400
 
 # adicionar aos grupos
-todas_sprites.add(michael, sapato, microfone, relogio, zumbi1, zumbi2)
+todas_sprites.add(michael, sapato, microfone, relogio, zumbi1, zumbi2, zumbi3)
 
 grupo_zumbi = pygame.sprite.Group()
-grupo_zumbi.add(zumbi1, zumbi2)
+grupo_zumbi.add(zumbi1, zumbi2, zumbi3)
 
 grupo_sapato = pygame.sprite.Group()
 grupo_sapato.add(sapato)
@@ -79,7 +86,7 @@ inicio = True
 #variaveis para testar o zumbi
 colidindo_zumbi = False
 
-#efeitos sonoros
+#musica de fundo efeitos sonoros
 pygame.mixer.music.set_volume(0.09)
 musica_de_fundo = pygame.mixer.music.load(os.path.join(diretorio_sons, 'thriller.mp3')) #música de fundo
 pygame.mixer.music.play(-1)      #toca (-1 para ficar repetindo)
@@ -93,7 +100,10 @@ barulho_coletaveis.set_volume(0.8)
 barulho_vitoria = pygame.mixer.Sound(os.path.join(diretorio_sons, 'he_hee.mp3'))
 barulho_vitoria.set_volume(0.8)
 
-while True: #loop principal
+
+#LOOP PRINCIPAL
+
+while True: 
     clock.tick(30) #fps da tela
 
     if inicio:
@@ -205,6 +215,8 @@ while True: #loop principal
         tela.blit(microfone_formatado, (240, 20))
         tela.blit(relogio_formatado, (500, 20))
         tela.blit(zumbi_formatado, (20, 580))
+        tela.blit(danca_formatada, (520, 580))
+
 
         if not game_over:
             # Formata o tempo para MM:SS

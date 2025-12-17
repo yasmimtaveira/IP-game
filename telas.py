@@ -58,7 +58,7 @@ def Tela_game_over(tela):
 
     fonte = pygame.font.SysFont('Calibri', 30, True, True) #negrito e italico 
 
-    texto = 'Aperte ENTER para jogar novamente!'
+    texto = 'Aperte ENTER para tentar novamente!'
     texto_formatado = fonte.render(texto, True, verde)
 
     flag = True
@@ -85,6 +85,11 @@ def Tela_vitoria(tela):
     fundo = pygame.image.load(os.path.join(diretorio_imagens, 'vitoria.png')).convert()
     fundo = pygame.transform.scale(fundo, (largura, altura))
 
+    fonte = pygame.font.SysFont('Calibri', 30, True, True) #negrito e italico 
+
+    texto = 'Aperte ENTER para jogar novamente!'
+    texto_formatado = fonte.render(texto, True, branco)
+
     flag = True
     while flag:
         for event in pygame.event.get():
@@ -100,5 +105,6 @@ def Tela_vitoria(tela):
 
         # Desenhar o fundo
         tela.blit(fundo, (0, 0))
+        tela.blit(texto_formatado, (290, 480))
 
         pygame.display.update()
