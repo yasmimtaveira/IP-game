@@ -1,4 +1,4 @@
-# 🧟 THRILLER Game - Projeto de Introdução a Programação
+# 🧟 ESCAPE THRILLER - Projeto de Introdução a Programação
 
 ## 🫂 Equipe:
 * Ayllane Maria Silva de Santana \<amss\>
@@ -24,10 +24,9 @@ As ferramentas, bibliotecas, frameworks utilizados com as respectivas justificat
 
 
 ## 📝 Divisão de tarefas
-A divisão de trabalho dentro do grupo (quem fez o quê);
-* código base - larissa
-* latório, slide... - yasmim
-* tema, sprites, design - Livia, Ayllane, Júlia
+* Larissa e Yasmim - código base, classes e objetos;
+* Lívia - tema, slide, código e imagem das telas;
+* Júlia e Ayllane - sprites, pesquisa de arquivos e relatório.
 
 
 ## 📚 Conceitos utilizados

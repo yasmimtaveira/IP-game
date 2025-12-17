@@ -45,15 +45,15 @@ relogio = Relogio()
 
 #ZUMBIS
 zumbi1 = Zumbi()
-zumbi1.rect.x = 50
+zumbi1.rect.x = 0
 zumbi1.rect.y = 60
 
 zumbi2 = Zumbi()
-zumbi2.rect.x = 300
+zumbi2.rect.x = 700
 zumbi2.rect.y = 200
 
 zumbi3 = Zumbi()
-zumbi3.rect.x = 600
+zumbi3.rect.x = 350
 zumbi3.rect.y = 400
 
 # adicionar aos grupos
@@ -98,7 +98,7 @@ barulho_coletaveis = pygame.mixer.Sound(os.path.join(diretorio_sons, 'som_coleta
 barulho_coletaveis.set_volume(0.8)
 
 barulho_vitoria = pygame.mixer.Sound(os.path.join(diretorio_sons, 'he_hee.mp3'))
-barulho_vitoria.set_volume(0.8)
+barulho_vitoria.set_volume(0.6)
 
 
 #LOOP PRINCIPAL
