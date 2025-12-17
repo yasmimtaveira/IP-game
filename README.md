@@ -20,29 +20,17 @@ As capturas de tela do sistema funcionando para compor a galeria de projetos
 
 
 ## 💻 Ferramentas utilizadas
-* PYGAME:
+* PYGAME: Principal biblioteca que tornou possível a criação do jogo de forma acessível. Muito utilizada, principalmente para o desenvolvimento de jogos 2d. 
 
-Principal biblioteca que tornou possível a criação do jogo de forma acessível. Muito utilizada, principalmente para o desenvolvimento de jogos 2d. 
+* GITHUB: Foi utilizado para a organização do código- fonte, facilitando o trabalho em em equipe, controlando diversas versões. Ademais, garantiu a segurança do código, evitando assim a perdas durante a realização do trabalho. 
 
-* GITHUB:
+* Pixel art: A plataforma foi utilizada para adquirir algumas sprites e modificar cenários do jogo. 
 
-Foi utilizado para a organização do código- fonte, facilitando o trabalho em em equipe, controlando diversas versões. Ademais, garantiu a segurança do código, evitando assim a perdas durante a realização do trabalho. 
+* IA: Usada apenas para a criação  da sprite do Rei do Pop e do mapa principal do jogo. 
 
-* Pixel art:
+* The Mushroom Kingdom: Plataforma usada para adquirir os efeitos sonoros do jogo.
 
-A plataforma foi utilizada para adquirir algumas sprites e modificar cenários do jogo. 
-
-* IA:
-
-Usada apenas para a criação  da sprite do Rei do Pop e do mapa principal do jogo. 
-
-* The Mushroom Kingdom:
-
-Plataforma usada para adquirir os efeitos sonoros do jogo.
-
-* VS code:
-
-Editor de código-fonte utilizado para o desenvolvimento e modularização de toda a programação do jogo
+* VS code: Editor de código-fonte utilizado para o desenvolvimento e modularização de toda a programação do jogo
 
 
 ## 📝 Divisão de tarefas
