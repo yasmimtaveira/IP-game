@@ -81,6 +81,9 @@ pygame.time.set_timer(COUNTDOWN_EVENT, 1000) # Dispara o evento a cada 1000 mili
 # Variável do fim do jogo
 game_over = False
 inicio = True
+#variaveis para testar o zumbi
+colidindo_zumbi = False
+ 
 
 while True: #loop principal
     clock.tick(30) #fps da tela
@@ -114,6 +117,12 @@ while True: #loop principal
                 inicio = True
                 game_over = False
                 time_left_seconds = initial_time_seconds
+                zumbi_hits = 0 
+                colidindo_zumbi = False 
+                n_sapatos = 0
+                n_microfones = 0
+                n_relogios = 0
+
 
         if not game_over:
             # Verifica se o evento do cronômetro personalizado foi disparado
@@ -138,10 +147,11 @@ while True: #loop principal
     if pygame.key.get_pressed()[K_s] and (michael.rect.y + 7 < altura - 150):
         michael.rect.y += 7
 
+    #COLISÕES 
     colisoes = pygame.sprite.spritecollide(michael, grupo_sapato, False, pygame.sprite.collide_mask)
     colisao_micro = pygame.sprite.spritecollide(michael, grupo_microfone, False, pygame.sprite.collide_mask)
     colisao_relogio = pygame.sprite.spritecollide(michael, grupo_relogio, False, pygame.sprite.collide_mask)
-    #colisao_zumbi = pygame.sprite.spritecollide(michael, grupo_zumbi, False, pygame.sprite.collide_mask)
+    colisao_zumbi = pygame.sprite.spritecollide(michael, grupo_zumbi, False, pygame.sprite.collide_mask)
 
 
     if colisoes:
@@ -158,10 +168,18 @@ while True: #loop principal
         relogio.rect.y = randrange(40, 440, 50)
         relogio.rect.x = randrange(50, 750, 50)
         n_relogios += 1
-        
-#COLISÃO ZUMBISS---------------------------------
-#ESTAVA COM ERRO NISO AQ 
-#-----------------------------------------------
+    
+    #colisão com os zumbiss 
+    if colisao_zumbi:
+        if not colidindo_zumbi:
+            zumbi_hits += 1
+            colidindo_zumbi = True
+
+            if zumbi_hits >= 3:
+                game_over = True
+    else:
+        colidindo_zumbi = False
+
             
     todas_sprites.draw(tela) #sprite aparece na tela
     todas_sprites.update() # atualiza a imagem
@@ -176,6 +194,7 @@ while True: #loop principal
         # Formata o tempo para MM:SS
         minutes = time_left_seconds // 60
         seconds = time_left_seconds % 60
+        
         timer_text = f"{minutes:02}:{seconds:02}"
         
         # Renderiza e exibe o cronômetro
