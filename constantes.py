@@ -1,8 +1,13 @@
-import os
+import os, pygame
+
+diretorio_principal = os.path.dirname(__file__)
+diretorio_imagens = os.path.join(diretorio_principal, 'sprites')
+diretorio_sons = os.path.join(diretorio_principal, 'sons')
 
 #quantidade de coletaveis
 meta = 5
 
+#tela
 largura = 800*1.3
 altura = 480*1.3
 
@@ -16,6 +21,3 @@ amarelo = (255, 255, 0)
 ciano = (0, 255, 255)
 magenta = (255, 0, 255)
 
-diretorio_principal = os.path.dirname(__file__)
-diretorio_imagens = os.path.join(diretorio_principal, 'sprites')
-diretorio_sons = os.path.join(diretorio_principal, 'sons')

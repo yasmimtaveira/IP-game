@@ -8,7 +8,7 @@ class Relogio(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         self.image = pygame.image.load(os.path.join(diretorio_imagens, 'relogio_ok.png'))
-        self.image = pygame.transform.scale(self.image, (80, 80))
+        self.image = pygame.transform.scale(self.image, (65, 65))
         self.rect = self.image.get_rect()
         self.rect.y = randrange(40, 440, 50)
         self.rect.x = randrange(50, 750, 50)

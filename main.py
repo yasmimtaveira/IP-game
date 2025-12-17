@@ -15,8 +15,7 @@ def restart():
     game_over = venceu = False
     time_left_seconds = initial_time_seconds
     n_sapatos = n_microfones = n_relogios = zumbi_hits = 0
-    michael.x = michael.x_inicial
-    michael.y = michael.y_inicial
+    michael.rect.topleft = michael.x_inicial, michael.y_inicial
 
 pygame.init()
 pygame.mixer.init()
@@ -65,7 +64,7 @@ grupo_relogio.add(relogio)
 
 #cronômetro
 # O tempo inicial em segundos (60 segundos = 1 minuto de jogo)
-initial_time_seconds = 20
+initial_time_seconds = 45
 time_left_seconds = initial_time_seconds
 
 # Cria um evento de usuário personalizado que será acionado a cada segundo (1000ms)
@@ -80,9 +79,19 @@ inicio = True
 #variaveis para testar o zumbi
 colidindo_zumbi = False
 
-pygame.mixer.music.set_volume(0.1)
+#efeitos sonoros
+pygame.mixer.music.set_volume(0.09)
 musica_de_fundo = pygame.mixer.music.load(os.path.join(diretorio_sons, 'thriller.mp3')) #música de fundo
 pygame.mixer.music.play(-1)      #toca (-1 para ficar repetindo)
+
+barulho_colisao = pygame.mixer.Sound(os.path.join(diretorio_sons, 'colisao_zumbi.wav'))
+barulho_colisao.set_volume(1)
+
+barulho_coletaveis = pygame.mixer.Sound(os.path.join(diretorio_sons, 'som_coletaveis.wav'))
+barulho_coletaveis.set_volume(0.8)
+
+barulho_vitoria = pygame.mixer.Sound(os.path.join(diretorio_sons, 'he_hee.mp3'))
+barulho_vitoria.set_volume(0.8)
 
 while True: #loop principal
     clock.tick(30) #fps da tela
@@ -136,6 +145,7 @@ while True: #loop principal
 
     #condição de vitoria
     if (n_sapatos >= meta) and (n_microfones >= meta) and (n_relogios >= meta):
+        barulho_vitoria.play()
         Tela_vitoria(tela)
         restart() #quando o looping da tela_vitoria acabar, significa que deu restart
 
@@ -164,19 +174,23 @@ while True: #loop principal
         if colisao_sapato:
             sapato.muda_posicao()
             n_sapatos += 1
+            barulho_coletaveis.play()
 
         if colisao_micro:
             microfone.muda_posicao()
             n_microfones += 1
+            barulho_coletaveis.play()
 
         if colisao_relogio:
             relogio.muda_posicao()
             n_relogios += 1
+            barulho_coletaveis.play()
 
         if colisao_zumbi:
             if not colidindo_zumbi:
                 zumbi_hits += 1
                 colidindo_zumbi = True
+                barulho_colisao.play()
 
                 if zumbi_hits >= 3:
                     game_over = True
@@ -188,8 +202,8 @@ while True: #loop principal
 
         #tela.blit faz o texto formatdo aparecer na tela. 
         tela.blit(sapato_formatado, (20, 20))
-        tela.blit(microfone_formatado, (220, 20))
-        tela.blit(relogio_formatado, (470, 20))
+        tela.blit(microfone_formatado, (240, 20))
+        tela.blit(relogio_formatado, (500, 20))
         tela.blit(zumbi_formatado, (20, 580))
 
         if not game_over:
