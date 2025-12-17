@@ -1,7 +1,10 @@
 import os
 
-largura = 800
-altura = 480
+#quantidade de coletaveis
+meta = 3
+
+largura = 800*1.3
+altura = 480*1.3
 
 #TUPLAS RGB DE CORES
 preto = (0, 0, 0)
