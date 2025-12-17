@@ -40,8 +40,15 @@ As capturas de tela do sistema funcionando para compor a galeria de projetos
 
 
 ## 📚 Conceitos utilizados
-Os conceitos que foram apresentados durante a disciplina e utilizados no projeto (indicando onde foram usados);
-Estruturas condicionais(if/else), estruturas de repetição (while, for), funções, estruturas de dados (listas, tuplas), classes
+* Estruturas condicionais: utilizadas para checagem da condição de vitória ou derrota, além na organização das telas do jogo, a verificação das teclas acionadas pelo usuário, etc.
+
+* Estruturas de repetição: o jogo acontece num loop infinito (while) que contém outras repetições para as telas do jogo, e o uso do "for" foi crucial para que houvesse a verificação de eventos.
+
+* Funções: utilizadas para facilitar a leitura do código e deixá-lo otimizado, como as telas e a função de restart das variáveis do jogo.
+
+* 	Estruturas de dados: uso de tuplas para armazenar dados como código RGB de cores.
+
+* Programação Orientada a Objeto (POO): criação de classes com atributos e métodos para conseguirmos instanciar objetos (Michael, zumbis, coletáveis), desenhá-los na tela e manipular os mesmos.
 
 
 ## ⚠️ Desafios e lições
