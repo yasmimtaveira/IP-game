@@ -80,6 +80,10 @@ inicio = True
 #variaveis para testar o zumbi
 colidindo_zumbi = False
 
+pygame.mixer.music.set_volume(0.1)
+musica_de_fundo = pygame.mixer.music.load(os.path.join(diretorio_sons, 'thriller.mp3')) #música de fundo
+pygame.mixer.music.play(-1)      #toca (-1 para ficar repetindo)
+
 while True: #loop principal
     clock.tick(30) #fps da tela
 
