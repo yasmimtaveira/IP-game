@@ -11,7 +11,6 @@
 ## 📜 Descrição
 A descrição da arquitetura do projeto, explicando como o código foi organizado;
 
-
 ## 🎮 Como jogar
 
 
@@ -35,6 +34,22 @@ Estruturas condicionais(if/else), estruturas de repetição (while, for), funç�
 
 
 ## ⚠️ Desafios e lições
+
+Esta seção tem como objetivo apresentar os principais desafios e erros enfrentados durante o desenvolvimento do projeto, bem como as lições aprendidas ao longo de sua execução.
+
+** Maior erro de violação durante o projeto:
+
+Não houve erro de violação significativo que comprometesse a realização do projeto. Desde o início, o grupo buscou seguir os requisitos e orientações estabelecidas pelo professor e pelos monitores da disciplina, realizando revisões contínuas ao longo do desenvolvimento para garantir a conformidade com as diretrizes propostas.
+
+** Maior desafio enfrentado durante o projeto
+
+Os maiores desafios enfrentados durante o projeto foram a organização da modularização, a identificação e correção de bugs e a aplicação dos conceitos de Programação Orientada a Objetos (POO) utilizando a biblioteca Pygame. Para lidar com essas dificuldades, o grupo realizou revisões constantes do código, testes frequentes e ajustes nas classes e módulos, além de considerar as sugestões dos monitores, o que possibilitou a continuidade e a conclusão do projeto.
+
+** Lições aprendidas durante o projeto
+
+Durante a realização do projeto, foi possível colocar em prática os conceitos abordados na disciplina de Introdução à Programação. Além disso, o grupo adquiriu conhecimentos fundamentais para o desenvolvimento do jogo utilizando a biblioteca Pygame, como Programação Orientada a Objetos (POO), classes, atributos e métodos, criação de objetos a partir de classes, herança, polimorfismo, uso de bibliotecas em Python, modularização e os principais comandos do Git. Ademais, o projeto reforçou a importância do trabalho em equipe e das revisões constantes do código, contribuindo para o desenvolvimento e a conclusão do projeto.
+
+
 Os desafios e erros enfrentados no decorrer do projeto e as lições aprendidas. Para tanto, respondam às seguintes perguntas:
 - Qual foi o maior erro cometido durante o projeto? Como vocês lidaram com ele?
 - Qual foi o maior desafio enfrentado durante o projeto? Como vocês lidaram com ele?
