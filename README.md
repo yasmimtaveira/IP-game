@@ -15,12 +15,13 @@ A descrição da arquitetura do projeto, explicando como o código foi organizad
 ## 🎮 Como jogar
 
 
+
 ## 🕹️ Telas
 As capturas de tela do sistema funcionando para compor a galeria de projetos
 
 
 ## 💻 Ferramentas utilizadas
-* PYGAME: Principal biblioteca que tornou possível a criação do jogo de forma acessível. Muito utilizada, principalmente para o desenvolvimento de jogos 2d. 
+* _PYGAME_: Principal biblioteca que tornou possível a criação do jogo de forma acessível. Muito utilizada, principalmente para o desenvolvimento de jogos 2d. 
 
 * GITHUB: Foi utilizado para a organização do código- fonte, facilitando o trabalho em em equipe, controlando diversas versões. Ademais, garantiu a segurança do código, evitando assim a perdas durante a realização do trabalho. 
 
