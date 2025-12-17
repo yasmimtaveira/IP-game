@@ -14,8 +14,11 @@ class Personagem(pygame.sprite.Sprite): #classe personagem herda da classe sprit
         self.sprites.append(pygame.image.load(os.path.join(diretorio_imagens, 'm3.png')).convert_alpha())
         self.sprites.append(pygame.image.load(os.path.join(diretorio_imagens, 'm4.png')).convert_alpha())
 
-        self.x = 0 #coordenadas iniciais de michael
-        self.y = 0
+        self.x_inicial = 0
+        self.y_inicial = 0
+
+        self.x = self.x_inicial #coordenadas iniciais de michael
+        self.y = self.y_inicial
 
         self.atual = 0
         self.image = self.sprites[self.atual] #inicia a animação na primeira imagem

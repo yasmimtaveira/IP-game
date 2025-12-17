@@ -13,3 +13,7 @@ class Sapato(pygame.sprite.Sprite):
         self.rect.y = randrange(40, 440, 50)
         self.rect.x = randrange(50, 750, 50)
         self.mask = pygame.mask.from_surface(self.image)
+
+    def muda_posicao(self):
+        self.rect.y = randrange(50, int(altura - 50), 50)
+        self.rect.x = randrange(50, int(largura - 50), 50)

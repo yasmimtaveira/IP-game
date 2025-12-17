@@ -1,7 +1,7 @@
 import os
 
 #quantidade de coletaveis
-meta = 3
+meta = 5
 
 largura = 800*1.3
 altura = 480*1.3

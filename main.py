@@ -1,4 +1,3 @@
-
 import pygame
 from pygame.locals import *
 from sys import exit
@@ -7,27 +6,30 @@ from sapato import Sapato
 from microfone2 import Microfone
 from relogio import Relogio
 from constantes import *
-from tela_inicial import Tela_inicial, Tela_game_over, Tela_vitoria
-from random import randrange
+from telas import Tela_inicial, Tela_game_over, Tela_vitoria
+from zumbi import Zumbi
 
 def restart():
-    global inicio, game_over, venceu, time_left_seconds, n_microfones, n_relogios, n_sapatos
-    inicio = True
+    global inicio, game_over, venceu, time_left_seconds, n_microfones, n_relogios, n_sapatos, zumbi_hits
+    #inicio = True
     game_over = venceu = False
     time_left_seconds = initial_time_seconds
-    n_sapatos = n_microfones = n_relogios = 0
+    n_sapatos = n_microfones = n_relogios = zumbi_hits = 0
+    michael.x = michael.x_inicial
+    michael.y = michael.y_inicial
 
 pygame.init()
 pygame.mixer.init()
 
 #definindo as variaveis dos pontos 
 n_sapatos = n_microfones = n_relogios = 0
+zumbi_hits = 0 #encontros com zumbi -- contador
 
 #fontes
-fonte = pygame.font.SysFont('freesansbold.ttf', 30, False, False) #negrito e italico 
+fonte = pygame.font.SysFont('Calibri', 35, True, False) #negrito e italico 
 
 tela = pygame.display.set_mode((largura, altura))
-pygame.display.set_caption('THRILLER')
+pygame.display.set_caption('ESCAPE THRILLER')
 clock = pygame.time.Clock()
 
 fundo = pygame.image.load(os.path.join(diretorio_imagens, 'fundo_cemiterio.jpeg')).convert_alpha() #carrega a imagem
@@ -39,10 +41,20 @@ sapato = Sapato()
 microfone = Microfone()
 relogio = Relogio()
 
-todas_sprites.add(michael)
-todas_sprites.add(sapato)
-todas_sprites.add(microfone)
-todas_sprites.add(relogio)
+#ZUMBIS
+zumbi1 = Zumbi()
+zumbi1.rect.x = 100
+zumbi1.rect.y = 60
+
+zumbi2 = Zumbi()
+zumbi2.rect.x = 500
+zumbi2.rect.y = 300
+
+# adicionar aos grupos
+todas_sprites.add(michael, sapato, microfone, relogio, zumbi1, zumbi2)
+
+grupo_zumbi = pygame.sprite.Group()
+grupo_zumbi.add(zumbi1, zumbi2)
 
 grupo_sapato = pygame.sprite.Group()
 grupo_sapato.add(sapato)
@@ -60,10 +72,13 @@ time_left_seconds = initial_time_seconds
 COUNTDOWN_EVENT = pygame.USEREVENT + 1
 pygame.time.set_timer(COUNTDOWN_EVENT, 1000) # Dispara o evento a cada 1000 milissegundos
 
-# Variável do fim do jogo
+# variáveis do estado do jogo
 game_over = False
 venceu = False
 inicio = True
+
+#variaveis para testar o zumbi
+colidindo_zumbi = False
 
 while True: #loop principal
     clock.tick(30) #fps da tela
@@ -72,15 +87,21 @@ while True: #loop principal
         Tela_inicial(tela)
         inicio = False
 
+    if game_over:
+        Tela_game_over(tela)
+        restart()
+
     #exibição dos pontos 
-    mensagem_sapato = f'Sapatos: {n_sapatos}'
-    mensagem_microfone = f'Microfones: {n_microfones}'
-    mensagem_relogio = f'Relógios: {n_relogios}'
+    mensagem_sapato = f'Sapatos: {n_sapatos}/{meta}'
+    mensagem_microfone = f'Microfones: {n_microfones}/{meta}'
+    mensagem_relogio = f'Relógios: {n_relogios}/{meta}'
+    mensagem_zumbi = f'Colisões: {zumbi_hits}/3'
 
     #texto formatado -- colocando cor, textura e a mensagem juntos. 
     sapato_formatado = fonte.render(mensagem_sapato, True, branco)
     microfone_formatado = fonte.render(mensagem_microfone, True, branco)
     relogio_formatado = fonte.render(mensagem_relogio, True, branco)
+    zumbi_formatado = fonte.render(mensagem_zumbi, True, vermelho)
     
     for event in pygame.event.get():
 
@@ -104,64 +125,78 @@ while True: #loop principal
                     game_over = True
                     time_left_seconds = 0 # Garante que o contador não mostre números negativos
 
+    
+    if zumbi_hits >= 3:
+        game_over = True
+        venceu = inicio = False
+
     #condição de vitoria
     if (n_sapatos >= meta) and (n_microfones >= meta) and (n_relogios >= meta):
-        #restart
         Tela_vitoria(tela)
-        restart()
+        restart() #quando o looping da tela_vitoria acabar, significa que deu restart
 
     else:
         tela.blit(fundo, (0,0)) #adiciona a imagem de fundo na origem na tela
 
-        #movimento com wasd
-        if pygame.key.get_pressed()[K_a] and (michael.rect.x - 7 > 0): #a segunda condição é pra michael não sair da tela
+        #movimento com wasd e setinhas
+        if (pygame.key.get_pressed()[K_a] or pygame.key.get_pressed()[K_LEFT]) and (michael.rect.x - 7 > 0): #a segunda condição é pra michael não sair da tela
             michael.rect.x -= 7
 
-        if pygame.key.get_pressed()[K_d] and (michael.rect.x + 7 < largura - 50):
+        if (pygame.key.get_pressed()[K_d] or pygame.key.get_pressed()[K_RIGHT]) and (michael.rect.x + 7 < largura - 50):
             michael.rect.x += 7
 
-        if pygame.key.get_pressed()[K_w] and (michael.rect.y - 7 > -40):
+        if (pygame.key.get_pressed()[K_w] or pygame.key.get_pressed()[K_UP]) and (michael.rect.y - 7 > -40):
             michael.rect.y -= 7
 
-        if pygame.key.get_pressed()[K_s] and (michael.rect.y + 7 < altura - 150):
+        if (pygame.key.get_pressed()[K_s] or pygame.key.get_pressed()[K_DOWN]) and (michael.rect.y + 7 < altura - 150):
             michael.rect.y += 7
 
+        #COLISÕES
         colisao_sapato = pygame.sprite.spritecollide(michael, grupo_sapato, False, pygame.sprite.collide_mask)
         colisao_micro = pygame.sprite.spritecollide(michael, grupo_microfone, False, pygame.sprite.collide_mask)
         colisao_relogio = pygame.sprite.spritecollide(michael, grupo_relogio, False, pygame.sprite.collide_mask)
+        colisao_zumbi = pygame.sprite.spritecollide(michael, grupo_zumbi, False, pygame.sprite.collide_mask)
 
         if colisao_sapato:
-            sapato.rect.y = randrange(40, 440, 50)
-            sapato.rect.x = randrange(50, 750, 50)
+            sapato.muda_posicao()
             n_sapatos += 1
 
         if colisao_micro:
-            microfone.rect.y = randrange(40, 440, 50)
-            microfone.rect.x = randrange(50, 750, 50)
+            microfone.muda_posicao()
             n_microfones += 1
 
         if colisao_relogio:
-            relogio.rect.y = randrange(40, 440, 50)
-            relogio.rect.x = randrange(50, 750, 50)
+            relogio.muda_posicao()
             n_relogios += 1
+
+        if colisao_zumbi:
+            if not colidindo_zumbi:
+                zumbi_hits += 1
+                colidindo_zumbi = True
+
+                if zumbi_hits >= 3:
+                    game_over = True
+        else:
+            colidindo_zumbi = False
 
         todas_sprites.draw(tela) #sprite aparece na tela
         todas_sprites.update() # atualiza a imagem
 
         #tela.blit faz o texto formatdo aparecer na tela. 
-        tela.blit(sapato_formatado, (10, 10))
-        tela.blit(microfone_formatado, (200, 10))
-        tela.blit(relogio_formatado, (400, 10))
+        tela.blit(sapato_formatado, (20, 20))
+        tela.blit(microfone_formatado, (220, 20))
+        tela.blit(relogio_formatado, (470, 20))
+        tela.blit(zumbi_formatado, (20, 580))
 
         if not game_over:
             # Formata o tempo para MM:SS
-            minutes = time_left_seconds // 60
-            seconds = time_left_seconds % 60
-            timer_text = f"{minutes:02}:{seconds:02}"
+            minutos = time_left_seconds // 60
+            segundos = time_left_seconds % 60
+            timer_text = f"{minutos:02}:{segundos:02}"
             
-            # Renderiza e exibe o cronômetro
+            # exibe o cronômetro na tela
             text_surface = fonte.render(timer_text, True, branco)
-            tela.blit(text_surface, (700,10))
+            tela.blit(text_surface, (930,20))
 
         else: #ele perdeu pelo fim do tempo
             Tela_game_over(tela)

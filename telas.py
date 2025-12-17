@@ -28,11 +28,38 @@ def Tela_inicial(tela):
 
         pygame.display.update()
 
+    # Carregar imagem de fundo com instruções
+    fundo = pygame.image.load(os.path.join(diretorio_imagens, 'menu.png')).convert()
+    fundo = pygame.transform.scale(fundo, (largura, altura))
+
+    menu = True
+    while menu:
+        for event in pygame.event.get():
+
+            if event.type == QUIT:
+                pygame.quit()
+                exit() # função de sys para fechar
+
+            # Detectar tecla pressionada
+            if event.type == KEYDOWN:
+                if event.key == K_RETURN:  # ENTER
+                    menu = False   
+
+        # Desenhar o fundo
+        tela.blit(fundo, (0, 0))
+
+        pygame.display.update()
+
 
 def Tela_game_over(tela):
     # Carregar imagem de fundo inicial
     fundo = pygame.image.load(os.path.join(diretorio_imagens, 'game_over.png')).convert()
     fundo = pygame.transform.scale(fundo, (largura, altura))
+
+    fonte = pygame.font.SysFont('Calibri', 30, True, True) #negrito e italico 
+
+    texto = 'Aperte ENTER para jogar novamente!'
+    texto_formatado = fonte.render(texto, True, verde)
 
     flag = True
     while flag:
@@ -47,8 +74,9 @@ def Tela_game_over(tela):
                 if event.key == K_RETURN:  # ENTER
                     flag = False               # sai do loop
 
-        # Desenhar o fundo
+        # Desenhar o fundo e o texto
         tela.blit(fundo, (0, 0))
+        tela.blit(texto_formatado, (290, 550))
 
         pygame.display.update()
 
