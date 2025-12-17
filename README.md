@@ -21,17 +21,17 @@ As capturas de tela do sistema funcionando para compor a galeria de projetos
 
 
 ## 💻 Ferramentas utilizadas
-* *PYGAME*: Principal biblioteca que tornou possível a criação do jogo de forma acessível. Muito utilizada, principalmente para o desenvolvimento de jogos 2d. 
+* **PYGAME:** Principal biblioteca que tornou possível a criação do jogo de forma acessível. Muito utilizada, principalmente para o desenvolvimento de jogos 2d. 
 
-* *GITHUB*: Foi utilizado para a organização do código- fonte, facilitando o trabalho em em equipe, controlando diversas versões. Ademais, garantiu a segurança do código, evitando assim a perdas durante a realização do trabalho. 
+* **GITHUB:** Foi utilizado para a organização do código- fonte, facilitando o trabalho em em equipe, controlando diversas versões. Ademais, garantiu a segurança do código, evitando assim a perdas durante a realização do trabalho. 
 
-* *Pixel art*: A plataforma foi utilizada para adquirir algumas sprites e modificar cenários do jogo. 
+* **Pixel art:** A plataforma foi utilizada para adquirir algumas sprites e modificar cenários do jogo. 
 
-* *IA*: Usada apenas para a criação  da sprite do Rei do Pop e do mapa principal do jogo. 
+* **IA:** Usada apenas para a criação  da sprite do Rei do Pop e do mapa principal do jogo. 
 
-* *The Mushroom Kingdom*: Plataforma usada para adquirir os efeitos sonoros do jogo.
+* **The Mushroom Kingdom:** Plataforma usada para adquirir os efeitos sonoros do jogo.
 
-* *VS code*: Editor de código-fonte utilizado para o desenvolvimento e modularização de toda a programação do jogo
+* **VS code:** Editor de código-fonte utilizado para o desenvolvimento e modularização de toda a programação do jogo
 
 
 ## 📝 Divisão de tarefas
@@ -41,28 +41,28 @@ As capturas de tela do sistema funcionando para compor a galeria de projetos
 
 
 ## 📚 Conceitos utilizados
-* *Estruturas condicionais:* utilizadas para checagem da condição de vitória ou derrota, além na organização das telas do jogo, a verificação das teclas acionadas pelo usuário, etc.
+* **Estruturas condicionais:** utilizadas para checagem da condição de vitória ou derrota, além na organização das telas do jogo, a verificação das teclas acionadas pelo usuário, etc.
 
-* *Estruturas de repetição:* o jogo acontece num loop infinito (while) que contém outras repetições para as telas do jogo, e o uso do "for" foi crucial para que houvesse a verificação de eventos.
+* **Estruturas de repetição:** o jogo acontece num loop infinito (while) que contém outras repetições para as telas do jogo, e o uso do "for" foi crucial para que houvesse a verificação de eventos.
 
-* *Funções:* utilizadas para facilitar a leitura do código e deixá-lo otimizado, como as telas e a função de restart das variáveis do jogo.
+* **Funções:** utilizadas para facilitar a leitura do código e deixá-lo otimizado, como as telas e a função de restart das variáveis do jogo.
 
-* 	*Estruturas de dados:* uso de tuplas para armazenar dados como código RGB de cores.
+* 	**Estruturas de dados:** uso de tuplas para armazenar dados como código RGB de cores.
 
-* *Programação Orientada a Objeto (POO):* criação de classes com atributos e métodos para conseguirmos instanciar objetos (Michael, zumbis, coletáveis), desenhá-los na tela e manipular os mesmos.
+* **Programação Orientada a Objeto (POO):** criação de classes com atributos e métodos para conseguirmos instanciar objetos (Michael, zumbis, coletáveis), desenhá-los na tela e manipular os mesmos.
 
 
 ## ⚠️ Desafios e lições
 Esta seção tem como objetivo apresentar os principais desafios e erros enfrentados durante o desenvolvimento do projeto, bem como as lições aprendidas ao longo de sua execução.
 
-* *Qual foi o maior erro cometido durante o projeto? Como vocês lidaram com ele?*
+* **Qual foi o maior erro cometido durante o projeto? Como vocês lidaram com ele?**
 
 (Não houve erro de violação significativo que comprometesse a realização do projeto. Desde o início, o grupo buscou seguir os requisitos e orientações estabelecidas pelo professor e pelos monitores da disciplina, realizando revisões contínuas ao longo do desenvolvimento para garantir a conformidade com as diretrizes propostas.)
 
-* *Qual foi o maior desafio enfrentado durante o projeto? Como vocês lidaram com ele?*
+* **Qual foi o maior desafio enfrentado durante o projeto? Como vocês lidaram com ele?**
 
 Os maiores desafios enfrentados durante o projeto foram a organização da modularização, a identificação e correção de bugs e a aplicação dos conceitos de Programação Orientada a Objetos (POO) utilizando a biblioteca Pygame. Para lidar com essas dificuldades, o grupo realizou revisões constantes do código, testes frequentes e ajustes nas classes e módulos, além de considerar as sugestões dos monitores, o que possibilitou a continuidade e a conclusão do projeto.)
 
-* *Quais as lições aprendidas durante o projeto?*
+* **Quais as lições aprendidas durante o projeto?**
 
 Durante a realização do projeto, foi possível colocar em prática os conceitos abordados na disciplina de Introdução à Programação. Além disso, o grupo adquiriu conhecimentos fundamentais para o desenvolvimento do jogo utilizando a biblioteca Pygame, como Programação Orientada a Objetos (POO), classes, atributos e métodos, criação de objetos a partir de classes, herança, polimorfismo, uso de bibliotecas em Python, modularização e os principais comandos do Git. Ademais, o projeto reforçou a importância do trabalho em equipe e das revisões constantes do código, contribuindo para o desenvolvimento e a conclusão do projeto.
