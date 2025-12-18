@@ -39,12 +39,31 @@ IP-game (diretório principal)
 
 
 ## 🎮 Como jogar
+* **Antes de rodar o jogo, siga os passos a seguir:**
 
+1- instale o python, na versão 3.8+
 
+2- instale o pygame, a principal biblioteca utilizada na criação do jogo, necessária para rodá-lo
+
+3-
 
 ## 🕹️ Telas
-As capturas de tela do sistema funcionando para compor a galeria de projetos
+Capturas de tela do sistema funcionando:
 
+**Tela inicial**
+![Telainicial](https://github.com/user-attachments/assets/8f7814c6-c605-4770-adad-c61fe973aa74)
+
+**Menu do jogo:**
+<img width="800" height="480" alt="tela_instruções" src="https://github.com/user-attachments/assets/d06f9635-d7e4-48ca-bafd-57611fe3b8f2" />
+
+**Mapa do jogo**
+<img width="1361" height="857" alt="Captura de tela 2025-12-17 203809" src="https://github.com/user-attachments/assets/c13e3192-f430-4aa2-a678-325ea6596f2d" />
+
+**Tela da vitória**
+<img width="800" height="480" alt="gameover_vitoria" src="https://github.com/user-attachments/assets/69487196-db89-48e0-b772-b57ddf9c7fbd" />
+
+**Tela da derrota**
+<img width="800" height="480" alt="gameover_derrota" src="https://github.com/user-attachments/assets/aedaf8a4-9217-4a16-9e2e-fd091ff7311a" />
 
 ## 💻 Ferramentas utilizadas
 * **PYGAME:** Principal biblioteca que tornou possível a criação do jogo de forma acessível. Muito utilizada, principalmente para o desenvolvimento de jogos 2d. 
