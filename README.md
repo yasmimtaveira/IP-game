@@ -1,6 +1,6 @@
 # 🧟 ESCAPE THRILLER - Projeto de Introdução a Programação
 
-## 🫂 Equipe:
+## 🤝 Equipe:
 * Ayllane Maria Silva de Santana \<amss\>
 * Júlia Almeida Brainer Dantas \<jabd\>
 * Larissa Paiva dos Santos \<lps8\>
@@ -42,7 +42,7 @@ Inspirado no famoso videoclipe Thriller, do astro do pop Michael Jackson, o jogo
 
 * **Objetivo:** O objetivo do jogo é fazer com que Michael colete cinco objetos de cada tipo dentro do limite de tempo, evitando a colisão com os zumbis. A cada objeto coletado ou colisão sofrida, os contadores do jogo são atualizados.
 
-* **Condições de vitória e derrota:** Para vencer, Michael deve coletar, dentro de 60 segundos, no mínimo cinco objetos de cada tipo — relógios, sapatos e microfones — sem ultrapassar o limite de três colisões com os zumbis. Caso esse limite seja ultrapassado ou caso o tempo se esgote antes da coleta de todos os objetos, Michael se transforma em um zumbi, encerrando o jogo como perdedor.
+* **Condições de vitória e derrota:** Para vencer, Michael deve coletar, dentro de 45 segundos, no mínimo cinco objetos de cada tipo — relógios, sapatos e microfones — sem ultrapassar o limite de três colisões com os zumbis. Caso esse limite seja ultrapassado ou caso o tempo se esgote antes da coleta de todos os objetos, Michael se transforma em um zumbi, encerrando o jogo como perdedor.
 
 ## 👩‍💻 Como jogar:
 * **Antes de rodar o jogo, siga os passos a seguir:**
