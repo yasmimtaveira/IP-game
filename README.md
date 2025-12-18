@@ -33,6 +33,10 @@ As capturas de tela do sistema funcionando para compor a galeria de projetos
 
 * **VS code:** Editor de código-fonte utilizado para o desenvolvimento e modularização de toda a programação do jogo
 
+* **Biblioteca os:** usada para encontrar os endereços dos arquivos do diretório.
+
+* **Biblioteca sys:** função exit usada para fechar a janela do jogo
+
 
 ## 📝 Divisão de tarefas
 * Larissa e Yasmim - código base, classes e objetos;
@@ -57,7 +61,7 @@ Esta seção tem como objetivo apresentar os principais desafios e erros enfrent
 
 * **Qual foi o maior erro cometido durante o projeto? Como vocês lidaram com ele?**
 
-(Não houve erro de violação significativo que comprometesse a realização do projeto. Desde o início, o grupo buscou seguir os requisitos e orientações estabelecidas pelo professor e pelos monitores da disciplina, realizando revisões contínuas ao longo do desenvolvimento para garantir a conformidade com as diretrizes propostas.)
+Não houve erros significativos que comprometessem a realização do projeto. Desde as etapas iniciais, o nosso grupo manteve atenção constante à organização e ao desenvolvimento do trabalho. Ao longo do processo, foram realizadas revisões frequentes do código e da estrutura do projeto, permitindo a identificação de possíveis inconsistências e sua correção antes que impactassem negativamente o andamento do jogo. Além disso, o acompanhamento das sugestões fornecidas pelos monitores e o trabalho colaborativo entre os integrantes contribuíram para a manutenção da qualidade do projeto.
 
 * **Qual foi o maior desafio enfrentado durante o projeto? Como vocês lidaram com ele?**
 
