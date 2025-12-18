@@ -45,7 +45,7 @@ Inspirado no famoso videoclipe Thriller, do astro do pop Michael Jackson, o jogo
 * **Condições de vitória e derrota:** Para vencer, Michael deve coletar, dentro de 45 segundos, no mínimo cinco objetos de cada tipo — relógios, sapatos e microfones — sem ultrapassar o limite de três colisões com os zumbis. Caso esse limite seja ultrapassado ou caso o tempo se esgote antes da coleta de todos os objetos, Michael se transforma em um zumbi, encerrando o jogo como perdedor.
 
 ## 👩‍💻 Como jogar:
-* **Antes de rodar o jogo, siga os passos a seguir:**
+**Antes de rodar o jogo, siga os passos a seguir:**
 
 1- Instale o python, na versão 3.8+.
 
@@ -55,7 +55,7 @@ Inspirado no famoso videoclipe Thriller, do astro do pop Michael Jackson, o jogo
 
 4- Execute o arquivo principal, o main.py.
 
-* **Finalizadas as configurações, siga as instruções dos comandos utilizados para movimentação no jogo:**
+**Finalizadas as configurações, siga as instruções dos comandos utilizados para movimentação no jogo:**
 
 * **Enter:** iniciar o jogo
 * **Setas ou teclas W/A/S/D:** movimentação do personagem
