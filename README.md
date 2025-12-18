@@ -17,57 +17,33 @@ Inspirado no famoso videoclipe Thriller, do astro do pop Michael Jackson, o jogo
 
 ## 📜 Descrição
 **ARQUITETURA DO PROJETO:**
-
-IP-game (diretório principal)
-
+```bash
+IP-game #diretório principal/
  |
- 
- | - README.md (Arquivo padrão do GitHub que contém o relatório do projeto)
- 
+ | - README.md #Arquivo padrão do GitHub que contém o relatório do projeto)/
  |
- 
- | - sons (Pasta com os arquivos .mp3 (música de fundo) e .wav (efeitos sonoros))
- 
+ | - sons #Pasta com os arquivos .mp3 (música de fundo) e .wav (efeitos sonoros)/
  |
- 
- | - sprites (Pasta com todas as imagens e sprites usadas (tela de fundo, inicio, personagens, etc.)
- 
+ | - sprites #Pasta com todas as imagens e sprites usadas (tela de fundo, inicio, personagens, etc.)/
  |
- 
- | - constantes.py (código com algumas constantes como as dimensões da tela)
- 
+ | - constantes.py #código com algumas constantes (como as dimensões da tela)/
  |
- 
- | - main.py (Arquivo do código base, onde ocorre o loop principal)
- 
+ | - main.py #Arquivo do código base (onde ocorre o loop principal)/
  |
- 
- | - microfone2.py (Arquivo da classe Microfone)
- 
+ | - microfone2.py #Arquivo da classe Microfone/
  |
- 
- | - personagem.py (Arquivo da classe Personagem)
- 
+ | - personagem.py #Arquivo da classe Personagem/
  |
- 
- | - relogio.py (Arquivo da classe Relogio)
- 
+ | - relogio.py #Arquivo da classe Relogio/
  |
- 
- | - sapato.py (Arquivo da classe Sapato)
- 
+ | - sapato.py #Arquivo da classe Sapato/
  |
- 
- | - zumbi.py (Arquivo da classe Zumbi)
- 
+ | - zumbi.py #Arquivo da classe Zumbi/
  |
- 
- | - telas.py (Arquivo com as funções da tela inicial, game over e vitória)
- 
+ | - telas.py #Arquivo com as funções da tela inicial, game over e vitória/
  |
- 
- | - prototipo.py (código inicial dos primeiros passos do projeto)
-
+ | - prototipo.py #código inicial dos primeiros passos do projeto/
+```
 
 ## 👩‍💻 Como jogar:
 **Antes de rodar o jogo, siga os passos a seguir:**
