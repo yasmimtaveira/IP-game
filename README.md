@@ -9,7 +9,33 @@
 
 
 ## 📜 Descrição
-A descrição da arquitetura do projeto, explicando como o código foi organizado;
+**ARQUITETURA DO PROJETO:**
+
+IP-game (diretório principal)
+ |
+ | - README.md (Arquivo padrão do GitHub que contém o relatório do projeto)
+ |
+ | - sons (Pasta com os arquivos .mp3 (música de fundo) e .wav (efeitos sonoros))
+ |
+ | - sprites (Pasta com todas as imagens e sprites usadas (tela de fundo, inicio, personagens, etc.)
+ |
+ | - constantes.py (código com algumas constantes como as dimensões da tela)
+ |
+ | - main.py (Arquivo do código base, onde ocorre o loop principal)
+ |
+ | - microfone2.py (Arquivo da classe Microfone) 
+ |
+ | - personagem.py (Arquivo da classe Personagem)
+ |
+ | - relogio.py (Arquivo da classe Relogio)
+ |
+ | - sapato.py (Arquivo da classe Sapato)
+ |
+ | - zumbi.py (Arquivo da classe Zumbi)
+ |
+ | - telas.py (Arquivo com as funções da tela inicial, game over e vitória)
+ |
+ | - prototipo.py (código inicial dos primeiros passos do projeto)
 
 
 ## 🎮 Como jogar
