@@ -57,8 +57,8 @@ Inspirado no famoso videoclipe Thriller, do astro do pop Michael Jackson, o jogo
 
 * **Finalizadas as configurações, siga as instruções dos comandos utilizados para movimentação no jogo:**
 
-* **ESC:** iniciar o jogo
-* **setas ou teclas W/A/S/D:** movimentação do personagem
+* **Enter:** iniciar o jogo
+* **Setas ou teclas W/A/S/D:** movimentação do personagem
 * **Barra de Espaço:** ativa a dança do Michael Jackson
 
 
