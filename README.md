@@ -37,8 +37,14 @@ IP-game (diretório principal)
  |
  | - prototipo.py (código inicial dos primeiros passos do projeto)
 
+## 🎮 Sobre o jogo:
+Inspirado no famoso videoclipe Thriller, do astro do pop Michael Jackson, o jogo Escape Thriller coloca o jogador no papel do próprio Michael, em um cenário de uma floresta sombria. Nesse ambiente, estão espalhados objetos que podem salvá-lo dos três zumbis que circulam pelo local.
 
-## 🎮 Como jogar
+* **Objetivo:** O objetivo do jogo é fazer com que Michael colete cinco objetos de cada tipo dentro do limite de tempo, evitando a colisão com os zumbis. A cada objeto coletado ou colisão sofrida, os contadores do jogo são atualizados.
+
+* **Condições de vitória e derrota:** Para vencer, Michael deve coletar, dentro de 60 segundos, no mínimo cinco objetos de cada tipo — relógios, sapatos e microfones — sem ultrapassar o limite de três colisões com os zumbis. Caso esse limite seja ultrapassado ou caso o tempo se esgote antes da coleta de todos os objetos, Michael se transforma em um zumbi, encerrando o jogo como perdedor.
+
+## 👩‍💻 Como jogar:
 * **Antes de rodar o jogo, siga os passos a seguir:**
 
 1- instale o python, na versão 3.8+
