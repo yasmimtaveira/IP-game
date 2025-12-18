@@ -45,7 +45,9 @@ IP-game (diretório principal)
 
 2- instale o pygame, a principal biblioteca utilizada na criação do jogo, necessária para rodá-lo
 
-3-
+3- 
+
+* **
 
 ## 🕹️ Telas
 Capturas de tela do sistema funcionando:
@@ -61,8 +63,7 @@ Capturas de tela do sistema funcionando:
 
 
 **Mapa do jogo:**
-
-<img width="1361" height="857" alt="Captura de tela 2025-12-17 203809" src="https://github.com/user-attachments/assets/c13e3192-f430-4aa2-a678-325ea6596f2d" />
+<img width="1291" height="779" alt="tela_jogo" src="https://github.com/user-attachments/assets/a4c01018-002a-4f3c-8989-b1e82a2f60a0" />
 
 
 **Tela da vitória:**
