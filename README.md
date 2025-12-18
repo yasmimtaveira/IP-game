@@ -12,29 +12,53 @@
 **ARQUITETURA DO PROJETO:**
 
 IP-game (diretório principal)
+
  |
+ 
  | - README.md (Arquivo padrão do GitHub que contém o relatório do projeto)
+ 
  |
+ 
  | - sons (Pasta com os arquivos .mp3 (música de fundo) e .wav (efeitos sonoros))
+ 
  |
+ 
  | - sprites (Pasta com todas as imagens e sprites usadas (tela de fundo, inicio, personagens, etc.)
+ 
  |
+ 
  | - constantes.py (código com algumas constantes como as dimensões da tela)
+ 
  |
+ 
  | - main.py (Arquivo do código base, onde ocorre o loop principal)
+ 
  |
- | - microfone2.py (Arquivo da classe Microfone) 
+ 
+ | - microfone2.py (Arquivo da classe Microfone)
+ 
  |
+ 
  | - personagem.py (Arquivo da classe Personagem)
+ 
  |
+ 
  | - relogio.py (Arquivo da classe Relogio)
+ 
  |
+ 
  | - sapato.py (Arquivo da classe Sapato)
+ 
  |
+ 
  | - zumbi.py (Arquivo da classe Zumbi)
+ 
  |
+ 
  | - telas.py (Arquivo com as funções da tela inicial, game over e vitória)
+ 
  |
+ 
  | - prototipo.py (código inicial dos primeiros passos do projeto)
 
 ## 🎮 Sobre o jogo:
@@ -51,7 +75,7 @@ Inspirado no famoso videoclipe Thriller, do astro do pop Michael Jackson, o jogo
 
 2- Instale o pygame, principal biblioteca utilizada na criação do jogo, necessária para rodá-lo.
 
-3- Baixe ou instale o repositório do jogo.
+3- Clone ou instale o repositório do jogo.
 
 4- Execute o arquivo principal, o main.py.
 
@@ -130,7 +154,7 @@ Esta seção tem como objetivo apresentar os principais desafios e erros enfrent
 
 * **Qual foi o maior erro cometido durante o projeto? Como vocês lidaram com ele?**
 
-Não houve erros significativos que comprometessem a realização do projeto. Desde as etapas iniciais, o nosso grupo manteve atenção constante à organização e ao desenvolvimento do trabalho. Ao longo do processo, foram realizadas revisões frequentes do código e da estrutura do projeto, permitindo a identificação de possíveis inconsistências e sua correção antes que impactassem negativamente o andamento do jogo. Além disso, o acompanhamento das sugestões fornecidas pelos monitores e o trabalho colaborativo entre os integrantes contribuíram para a manutenção da qualidade do projeto.
+O maior erro cometido durante o projeto foi não termos definido a divisão de tarefas desde o inicio, o que dificultou a organização. Por outro lado, isso contribuiu para que integrantes do grupo se ajudassem em todas as etapas, pois ao longo do processo, foram realizadas revisões frequentes do código e da estrutura do projeto, permitindo a identificação de possíveis inconsistências e sua correção antes que impactassem negativamente o andamento do jogo. Além disso, o acompanhamento das sugestões fornecidas pelos monitores e o trabalho colaborativo entre os integrantes contribuíram para a manutenção da qualidade do projeto.
 
 * **Qual foi o maior desafio enfrentado durante o projeto? Como vocês lidaram com ele?**
 
